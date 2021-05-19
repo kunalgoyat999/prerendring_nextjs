@@ -16,7 +16,7 @@ const DUMMY_EVENTS = [
       "We know: Networking is no fun if you are an introvert person. That's why we came up with this event - it'll be so much easier. Promised!",
     location: "New Wall Street 5, 98765 New Work",
     date: "2021-05-30",
-    image: "2021-05-30",
+    image: "images/introvert-event.jpg",
     isFeatured: true,
   },
   {
@@ -44,7 +44,9 @@ export function getFilteredEvents(dateFilter) {
 
   let filteredEvents = DUMMY_EVENTS.filter((event) => {
     const eventDate = new Date(event.date);
-    return eventDate.getFullYear() === year && eventDate.getMonth() === month - 1;
+    return (
+      eventDate.getFullYear() === year && eventDate.getMonth() === month - 1
+    );
   });
 
   return filteredEvents;
